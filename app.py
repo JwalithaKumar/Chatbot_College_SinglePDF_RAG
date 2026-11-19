@@ -6,7 +6,7 @@ from rag_engine import load_knowledge_base, ask_rag
 # 1. PAGE CONFIGURATION
 
 st.set_page_config(
-    page_title="College Info Assistant",
+    page_title="Shridevi Institute Of Technology -  Info Assistant",
     page_icon="🤖",
     layout="centered"
 )
@@ -63,7 +63,7 @@ for message in st.session_state.messages:
 
 # 5. USER INPUT AND RAG RESPONSE
 
-question = st.chat_input("Ask something about Jwalitha...")
+question = st.chat_input("Ask something about my college...")
 
 if question:
     st.session_state.messages.append(
