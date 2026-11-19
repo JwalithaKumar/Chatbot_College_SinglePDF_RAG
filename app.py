@@ -6,16 +6,15 @@ from rag_engine import load_knowledge_base, ask_rag
 # 1. PAGE CONFIGURATION
 
 st.set_page_config(
-    page_title="Jwalitha's AI Assistant",
+    page_title="College Info Assistant",
     page_icon="🤖",
     layout="centered"
 )
 
-st.title("🤖 Jwalitha's AI Assistant")
+st.title("🤖 College Info Assistant")
 
 st.write(
-    "Ask me about Jwalitha's professional experience, "
-    "technical skills, training programs and achievements."
+    "Ask me anything about College Info"
 )
 
 st.divider()
@@ -25,7 +24,7 @@ st.divider()
 
 @st.cache_resource
 def initialize_rag():
-    return load_knowledge_base("Jwalithapro.pdf")
+    return load_knowledge_base("01_College_Information.pdf")
 
 
 try:
