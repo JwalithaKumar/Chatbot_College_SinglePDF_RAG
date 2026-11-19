@@ -4,6 +4,7 @@ from rag_engine import load_knowledge_base, ask_rag
 
 st.set_page_config(page_title="College Info Assistant")
 st.title("🤖 College Info Assistant")
+st.caption("Powered By StreamlitIO and GitHub")
 
 @st.cache_resource
 def initialize_rag():
