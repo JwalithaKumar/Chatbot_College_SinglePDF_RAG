@@ -13,11 +13,11 @@ embedding_model, chunks, index = initialize_rag()
 api_key = st.secrets["GROQ_API_KEY"]
 
 # Initialize chat history
-if "messages" not in st.session_state:
-    st.session_state.messages = []
+if "chat_hist" not in st.session_state:
+    st.session_state.chat_hist = []
 
 # Display previous messages
-for msg in st.session_state.messages:
+for msg in st.session_state.chat_hist:
     with st.chat_message(msg["role"]):
         st.write(msg["content"])
 
@@ -25,7 +25,7 @@ for msg in st.session_state.messages:
 question = st.chat_input("Ask about the college...")
 
 if question:
-    st.session_state.messages.append(
+    st.session_state.chat_hist.append(
         {"role": "user", "content": question}
     )
 
@@ -40,11 +40,11 @@ if question:
             )
             st.write(answer)
 
-    st.session_state.messages.append(
+    st.session_state.chat_hist.append(
         {"role": "assistant", "content": answer}
     )
 
 # Clear chat history
 if st.button("Clear Chat"):
-    st.session_state.messages = []
+    st.session_state.chat_hist = []
     st.rerun()
