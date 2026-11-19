@@ -48,7 +48,7 @@ def build_vector_database(chunks, model_name="all-MiniLM-L6-v2"):
     return embedding_model, index
 
 
-def load_knowledge_base(pdf_path="Jwalithapro.pdf"):
+def load_knowledge_base(pdf_path="01_College_Information.pdf"):
     """Return (embedding_model, chunks, faiss_index)."""
     full_text = load_pdf(pdf_path)
     chunks = create_chunks(full_text)
